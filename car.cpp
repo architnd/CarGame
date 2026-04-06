@@ -12,7 +12,6 @@ class ICar {
   virtual ~ICar() = default;
   virtual std::string GetModel() const = 0;
   
-  // Added to interface so we don't need to cast to MyCar
   virtual int GetPosition() const = 0; 
   virtual void Update() = 0;           
 };

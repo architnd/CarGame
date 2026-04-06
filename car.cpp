@@ -72,8 +72,6 @@ int main() {
     cout << "\033[2J\033[H";
     cout << "\n";
     for (int i = 0; i < numCars; ++i) {
-      // Dereference the unique_ptr to get a reference to the interface
-      // No dynamic_cast or pointers needed!
       ICar& car = *cars[i]; 
       
       // Update car position

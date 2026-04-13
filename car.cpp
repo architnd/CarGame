@@ -12,6 +12,7 @@ class ICar {
   virtual ~ICar() = default;
   virtual std::string GetModel() const = 0;
   
+  // Added to interface so we don't need to cast to MyCar
   virtual int GetPosition() const = 0; 
   virtual void Update() = 0;           
 };
@@ -71,6 +72,8 @@ int main() {
     cout << "\033[2J\033[H";
     cout << "\n";
     for (int i = 0; i < numCars; ++i) {
+      // Dereference the unique_ptr to get a reference to the interface
+      // No dynamic_cast or pointers needed!
       ICar& car = *cars[i]; 
       
       // Update car position
